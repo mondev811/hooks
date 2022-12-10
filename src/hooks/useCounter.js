@@ -9,7 +9,7 @@ export const useCounter = (initialValue = 10) => {
     counter > 0 && setCounter(counter - value);
   };
   const reset = () => {
-    setCounter(initialValue || 10);
+    setCounter(initialValue);
   };
   return { counter, increment, decrement, reset };
 };
