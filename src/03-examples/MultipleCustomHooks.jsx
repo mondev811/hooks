@@ -1,4 +1,6 @@
 import React from "react";
+import { LoadingQuote } from "../components/LoadingQuote";
+import { Quote } from "../components/Quote";
 import { useFetch, useCounter } from "../hooks";
 
 export const MultipleCustomHooks = () => {
@@ -40,21 +42,9 @@ export const MultipleCustomHooks = () => {
   return (
     <>
       <h1>Bible Quotes</h1>
-      {isLoading && (
-        <div className="alert alert-info text-center">Loading...</div>
-      )}
+      {isLoading && <LoadingQuote />}
       {!isLoading && !hasError && !!data && (
-        <>
-          <h4>
-            {counter + 1} of {verses.length}
-          </h4>
-          <blockquote className="blockquote text-end">
-            <p className="mb-1">{data.text}</p>
-            <footer className="blockquote-footer mt-2">
-              {verses[counter]}
-            </footer>
-          </blockquote>
-        </>
+        <Quote text={data.text} footer={verses[counter]} />
       )}
       {!isLoading && hasError && <p>Error found: {hasError}</p>}
       <button className="btn btn-primary" onClick={getNextQuote}>
