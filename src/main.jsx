@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { FocusScreen } from "./04-useRef/FocusScreen";
+import { Padre } from "./07-tarea-memo/Padre";
+// import { CallbackHook } from "./06-memos/CallbackHook";
+// import { MemoHook } from "./06-memos/MemoHook";
+// import { Layout } from "./05-useLayoutEffect/Layout";
+// import { Memorize } from "./06-memos/Memorize";
+// import { FocusScreen } from "./04-useRef/FocusScreen";
 // import { FormWithCustomHook } from "./02-useEffect/FormWithCustomHook";
 // import { MultipleCustomHooks } from "./03-examples/MultipleCustomHooks";
 // import { SimpleForm } from "./02-useEffect/SimpleForm";
@@ -20,5 +25,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   // <SimpleForm />
   // <FormWithCustomHook />
   // <MultipleCustomHooks />
-  <FocusScreen />
+  // <FocusScreen />
+  // <Layout />
+  // <Memorize />
+  // <MemoHook />
+  // <CallbackHook />
+  <Padre />
 );
