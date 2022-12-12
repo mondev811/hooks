@@ -1,6 +1,5 @@
 import React from "react";
-import { LoadingQuote } from "../components/LoadingQuote";
-import { Quote } from "../components/Quote";
+import { LoadingQuote, Quote } from "./";
 import { useFetch, useCounter } from "../hooks";
 
 export const MultipleCustomHooks = () => {
