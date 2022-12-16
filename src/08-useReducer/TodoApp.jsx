@@ -10,11 +10,11 @@ const init = () => {
 };
 
 export const TodoApp = () => {
-  const [state, dispatch] = useReducer(todoReducer, initialState, init);
+  const [toDoList, dispatch] = useReducer(todoReducer, initialState, init);
 
   useEffect(
-    () => localStorage.setItem("todos", JSON.stringify(state)),
-    [state]
+    () => localStorage.setItem("todos", JSON.stringify(toDoList)),
+    [toDoList]
   );
 
   const handleNewTodo = (todo) => {
@@ -32,12 +32,12 @@ export const TodoApp = () => {
   return (
     <>
       <h1>
-        TodoApp ({state.length}), <small>pending: 2</small>
+        TodoApp ({toDoList.length}), <small>pending: 2</small>
       </h1>
       <hr />
       <div className="row">
         <div className="col-7">
-          <TodoList todos={state} />
+          <TodoList todos={toDoList} onDeleteItem={deleteTodo} />
         </div>
 
         <div className="col-5">
