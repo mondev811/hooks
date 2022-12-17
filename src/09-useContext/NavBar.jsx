@@ -2,19 +2,12 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 export const NavBar = () => {
-  const getLinkClass = (props) => {
-    if (props.isActive) {
-      return "nav-link active";
-    } else {
-      return "nav-link";
-    }
-  };
   return (
     // <>
-    //   {/* <NavLink to="/">Home</NavLink> use a only to navigate to an external page - */}
-    //   <NavLink to="/">Home</NavLink>
-    //   <NavLink to="/about">About</NavLink>
-    //   <NavLink to="/login">Login</NavLink>
+    //   {/* <a href="/">Home</NavLink> use a only to navigate to an external page - */}
+    //   <Link to="/">Home</Link>
+    //   <Link to="/about">About</Link>
+    //   <Link to="/login">Login</Link>
     // </>
 
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -36,16 +29,28 @@ export const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
             <NavLink
-              className={(props) => getLinkClass(props)}
+              className={({ isActive }) =>
+                `nav-link ${isActive ? "active" : ""}`
+              }
               aria-current="page"
               to="/"
             >
               Home
             </NavLink>
-            <NavLink className={(props) => getLinkClass(props)} to="/about">
+            <NavLink
+              className={({ isActive }) =>
+                `nav-link ${isActive ? "active" : ""}`
+              }
+              to="/about"
+            >
               About
             </NavLink>
-            <NavLink className={(props) => getLinkClass(props)} to="/login">
+            <NavLink
+              className={({ isActive }) =>
+                `nav-link ${isActive ? "active" : ""}`
+              }
+              to="/login"
+            >
               Login
             </NavLink>
             {/* <NavLink className="nav-link disabled">Disabled</NavLink> */}
