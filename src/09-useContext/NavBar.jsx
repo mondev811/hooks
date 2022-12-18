@@ -10,7 +10,7 @@ export const NavBar = () => {
     //   <Link to="/login">Login</Link>
     // </>
 
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded-3">
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="#">
           useContext
